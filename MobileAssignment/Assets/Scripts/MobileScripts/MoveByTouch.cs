@@ -12,7 +12,7 @@ public class MoveByTouch : MonoBehaviour
         {
             Vector3 touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
             Debug.DrawLine(camera.transform.position, touchPosition, Color.red);
-            Debug.Log("Touching screen");
+            //Debug.Log("Touching screen");
         }
     }
 }
