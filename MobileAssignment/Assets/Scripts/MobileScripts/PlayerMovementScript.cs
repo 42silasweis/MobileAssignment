@@ -7,6 +7,10 @@ public class PlayerMovementScript : MonoBehaviour
     public float moveSpeed = 5.0f;
     public Vector3 touchPosition;
     public bool currentlyHolding = false;
+    public float velocitySpeed;
+    public float suspicion;
+    float suspicionTimer;
+    public float suspicionCoolDownDelay = 0.6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        suspicionTimer += Time.deltaTime;
         for (int i = 0; i < Input.touchCount; i++)
         {
             touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
@@ -30,11 +35,25 @@ public class PlayerMovementScript : MonoBehaviour
             }
             //Debug.Log("Touching screen");
         }
-        
-
+        velocitySpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+        if (velocitySpeed >= 1.0f && currentlyHolding)
+        {
+            suspicion = velocitySpeed;
+        }
+        else if(suspicion > 0 && !currentlyHolding && suspicionTimer > suspicionCoolDownDelay)
+        {
+            
+            suspicion -= 0.1f;
+            if (suspicion < 0)
+            {
+                suspicion = 0;
+            }
+            suspicionTimer = 0;
+        }
         //float x = Input.GetAxis("Horizontal");
         //float y = Input.GetAxis("Vertical");
         //Vector2 moveDir = new Vector2(touchPosition.x - transform.position.x, touchPosition.y - transform.position.y);
         //GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
     }
+
 }
