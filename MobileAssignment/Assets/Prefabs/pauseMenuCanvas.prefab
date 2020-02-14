@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 7014503548704129411}
   - component: {fileID: 7014503548704129420}
   - component: {fileID: 7014503548704129421}
-  - component: {fileID: 7014503548704129409}
+  - component: {fileID: 1629301781}
   m_Layer: 5
   m_Name: pauseMenuCanvas
   m_TagString: Untagged
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7014503548704129409
+--- !u!114 &1629301781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7014503548704129422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93fc021ecf86cbe49bde0f13777c3b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 99547d593a7d0fc47bf736733d84ad79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7014503548862185274
@@ -284,7 +284,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7014503548704129409}
+        - m_Target: {fileID: 1629301781}
           m_MethodName: LoadMainMenu
           m_Mode: 1
           m_Arguments:
@@ -691,7 +691,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7014503548704129409}
+        - m_Target: {fileID: 1629301781}
           m_MethodName: Resume
           m_Mode: 1
           m_Arguments:
@@ -871,7 +871,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7014503548704129409}
+        - m_Target: {fileID: 1629301781}
           m_MethodName: QuitGame
           m_Mode: 1
           m_Arguments:
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7014503548704129409}
+        - m_Target: {fileID: 1629301781}
           m_MethodName: Restart
           m_Mode: 1
           m_Arguments:
