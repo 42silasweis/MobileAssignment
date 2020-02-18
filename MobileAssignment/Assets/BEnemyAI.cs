@@ -15,7 +15,7 @@ public class BEnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    bool runToPlayer;
+    public bool runToPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -56,19 +56,21 @@ public class BEnemyAI : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector3 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed;// * Time.deltaTime;
-
+        direction.z = transform.position.z;
         //rb.AddForce(force);
-        //Vector2 moveDir = new Vector2(target.transform.x - transform.position.x, target.transform.y - transform.position.y);
-        if (direction.magnitude > stopDistance && runToPlayer)
+        Vector2 moveDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+        if (moveDir.magnitude > stopDistance && runToPlayer)
         {
             //rb.velocity = force;
             rb.AddForce(force);
+            //Debug.Log("Is supposed to move");
         }
-        else if (direction.magnitude < stopDistance)
+        else if (moveDir.magnitude < stopDistance)
         {
-            rb.velocity = new Vector2 (0, 0);
+            rb.velocity = new Vector2 (0, 0); 
+            //Debug.Log("Is not supposed to move");
         }
         
 
