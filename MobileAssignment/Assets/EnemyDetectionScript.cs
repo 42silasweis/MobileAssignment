@@ -16,16 +16,16 @@ public class EnemyDetectionScript : MonoBehaviour
         // Numbering starts from top to bottom meaning top starts at 1
 
         Vector3 noAngle = transform.right; //This and the next two lines is for Raycast 1 offset at an angle of -15 from the transform.right position
-        Quaternion spreadAngle = Quaternion.AngleAxis(10, new Vector3(0, 0, 1));
+        Quaternion spreadAngle = Quaternion.AngleAxis(6, new Vector3(0, 0, 1));
         Vector3 newVector = spreadAngle * noAngle;
 
-        Quaternion spreadAngle2 = Quaternion.AngleAxis(350, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 3 offset at an angle of 15 from the transform.right position
+        Quaternion spreadAngle2 = Quaternion.AngleAxis(354, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 3 offset at an angle of 15 from the transform.right position
         Vector3 newVector2 = spreadAngle2 * noAngle;
 
-        Quaternion spreadAngle3 = Quaternion.AngleAxis(20, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 4 offset at an angle of 15 from the transform.right position
+        Quaternion spreadAngle3 = Quaternion.AngleAxis(14, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 4 offset at an angle of 15 from the transform.right position
         Vector3 newVector3 = spreadAngle3 * noAngle;
 
-        Quaternion spreadAngle4 = Quaternion.AngleAxis(340, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 5 offset at an angle of 15 from the transform.right position
+        Quaternion spreadAngle4 = Quaternion.AngleAxis(346, new Vector3(0, 0, 1)); //This and the one below it is for Raycast 5 offset at an angle of 15 from the transform.right position
         Vector3 newVector4 = spreadAngle4 * noAngle;
 
 
@@ -130,9 +130,12 @@ public class EnemyDetectionScript : MonoBehaviour
 
 
 
-        if (playerIsInSight && hitInfo1.collider == null && hitInfo2.collider == null && hitInfo3.collider == null)
+        if (playerIsInSight)
         {
-             playerIsInSight = false;
+            if(hitInfo1.collider.tag != ("Player") && hitInfo2.collider.tag != ("Player") && hitInfo3.collider.tag != ("Player") && hitInfo4.collider.tag != ("Player") && hitInfo5.collider.tag != ("Player"))
+            {
+                playerIsInSight = false;
+            }
         }
 
 
