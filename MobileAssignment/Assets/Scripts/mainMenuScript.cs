@@ -10,26 +10,25 @@ public class mainMenuScript : MonoBehaviour
     {
        
     }
-
-    // Update is called once per frame
-    void Update()
+    public void LoadTutorial()
     {
-
+        SceneManager.LoadScene("Tutorial");
     }
-    public void LoadMainMenu()
+    public void LoadBoard1()
     {
-        SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1;
+        SceneManager.LoadScene("Board1");
     }
-    public void Resume()
+    public void LoadBoard2()
     {
-        Time.timeScale = 1;
-        GetComponent<Canvas>().enabled = false;
+        SceneManager.LoadScene("Board2");
     }
-    public void Restart()
+    public void LoadBoard3()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Board3");
+    }
+    public void LoadBoard4()
+    {
+        SceneManager.LoadScene("Board4");
     }
     public void QuitGame()
     {
