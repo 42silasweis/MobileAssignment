@@ -34,7 +34,7 @@ public class EnemyPatrolScript : MonoBehaviour
     public float maxWaitForThisLong = 6;
     public float randomWaitTime;
     float waitTimer;
-    bool canPatrol;
+    public bool canPatrol;
 
     // Start is called before the first frame update
     void Start()
