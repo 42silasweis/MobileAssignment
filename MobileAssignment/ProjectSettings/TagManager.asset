@@ -14,9 +14,9 @@ TagManager:
   - 
   - 
   - Wall
-  - 
-  - 
-  - 
+  - Camera
+  - Player
+  - CameraRestrictions
   - 
   - 
   - 

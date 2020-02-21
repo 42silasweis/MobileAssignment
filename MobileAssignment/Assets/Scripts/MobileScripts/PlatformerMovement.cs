@@ -66,6 +66,7 @@ public class PlatformerMovement : MonoBehaviour
             jumpCount++;
         }
         float x = joystick.Horizontal;
+        float y = joystick.Vertical;
         if(x == 0)
         {
             anim.SetInteger("x", 0);
