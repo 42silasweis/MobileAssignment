@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyFaceMovingDir : MonoBehaviour
 {
     public float rotationSpeed = 2.0f;
-
     void Update()
     {
         //This function is to make the player sprite face the direction it is moving
@@ -17,5 +16,6 @@ public class EnemyFaceMovingDir : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
+        GetComponent<Animator>().SetFloat("velocity", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
 }

@@ -65,6 +65,11 @@ public class EnemyPatrolScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         waitTimer += Time.deltaTime;
         noiseLevel = GameObject.FindObjectOfType<BEnemyAI>().noiseLevel;
         canPatrol = GameObject.FindObjectOfType<BEnemyAI>().canPatrol;

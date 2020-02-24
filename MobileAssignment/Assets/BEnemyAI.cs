@@ -59,6 +59,11 @@ public class BEnemyAI : MonoBehaviour
     void FixedUpdate()
     {
 
+        if(player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         Vector2 distanceToThePlayer = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
         distToPlayer = distanceToThePlayer.magnitude;
         if (distanceToThePlayer.magnitude < distToHearNoise)
