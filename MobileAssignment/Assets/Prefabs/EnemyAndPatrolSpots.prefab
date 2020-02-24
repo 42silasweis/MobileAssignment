@@ -185,7 +185,7 @@ MonoBehaviour:
   patrolLocation4: {fileID: 3382718161444941628}
   patrolLocation5: {fileID: 3382718160174631675}
   speed: 1.5
-  noiseCauseSuspicionLevel: 1
+  noiseCauseSuspicionLevel: 1.2
   nextWayPointDistance: 1
   minWaitForThisLong: 3
   maxWaitForThisLong: 6
