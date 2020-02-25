@@ -139,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &2866746465683844939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   slowSpeed: 2
   noiseLevel: 0
   distToHearNoise: 8
-  noiseCauseSuspicionLevel: 1
+  noiseCauseSuspicionLevel: 1.4
   enemySeesPlayer: 0
   heardNoiseFollowDuration: 3
   runToPlayer: 0
@@ -177,7 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopDistance: 0.9
-  player: {fileID: 0}
   target: {fileID: 0}
   patrolLocation1: {fileID: 3382718160927180228}
   patrolLocation2: {fileID: 3382718161458201067}
@@ -185,7 +184,8 @@ MonoBehaviour:
   patrolLocation4: {fileID: 3382718161444941628}
   patrolLocation5: {fileID: 3382718160174631675}
   speed: 1.5
-  noiseCauseSuspicionLevel: 1.2
+  patrolSpeed: 2
+  noiseCauseSuspicionLevel: 1.4
   nextWayPointDistance: 1
   minWaitForThisLong: 3
   maxWaitForThisLong: 6

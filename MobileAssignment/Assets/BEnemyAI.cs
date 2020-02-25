@@ -7,7 +7,7 @@ public class BEnemyAI : MonoBehaviour
 {
     public float stopDistance = 0.35f;
 
-    public Transform player;
+    Transform player;
     Transform target;
     public float distToPlayer;
     public float speed = 4f;
@@ -38,6 +38,7 @@ public class BEnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void UpdatePath()
     {
@@ -55,29 +56,9 @@ public class BEnemyAI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-
-        if(player == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-
-        Vector2 distanceToThePlayer = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
-        distToPlayer = distanceToThePlayer.magnitude;
-        if (distanceToThePlayer.magnitude < distToHearNoise)
-        {
-            noiseLevel = GameObject.FindObjectOfType<PlayerMovementScript>().suspicion;
-        }
-
-
-        heardNoiseTimer += Time.deltaTime;
-        
-        enemySeesPlayer = GameObject.FindObjectOfType<EnemyDetectionScript>().playerIsInSight;
-
-
-        if(enemySeesPlayer && canPatrol || canPatrol && noiseLevel > noiseCauseSuspicionLevel)
+        if (enemySeesPlayer && canPatrol || canPatrol && noiseLevel > noiseCauseSuspicionLevel)
         {
             canPatrol = false;
             target = player;
@@ -87,6 +68,23 @@ public class BEnemyAI : MonoBehaviour
             canPatrol = true;
             target = null;
         }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        Vector2 distanceToThePlayer = new Vector2(player.position.x - transform.position.x, player.position.y - transform.position.y);
+        distToPlayer = distanceToThePlayer.magnitude;
+        if (distanceToThePlayer.magnitude < distToHearNoise)
+        {
+            noiseLevel = GameObject.FindObjectOfType<PlayerMovementScript>().suspicion;
+        }
+
+        heardNoiseTimer += Time.deltaTime;
+        
+        enemySeesPlayer = GameObject.FindObjectOfType<EnemyDetectionScript>().playerIsInSight;
+
+        
 
         if (path == null)
         {
@@ -110,24 +108,25 @@ public class BEnemyAI : MonoBehaviour
         {
             moveDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
         }
-              
+
+
+        if (noiseLevel >= noiseCauseSuspicionLevel && !enemySeesPlayer)
+        {
+            heardNoiseTimer = 0;
+        }
         if (!canPatrol)
         {
             if (moveDir.magnitude > stopDistance && enemySeesPlayer)
             {
                 //rb.velocity = force;
                 rb.AddForce(force);
-                //Debug.Log("Is supposed to move");
+                heardNoiseTimer = 0;
+                Debug.Log("Is supposed to move");
             }
-            else if (moveDir.magnitude < stopDistance)
+            else if (moveDir.magnitude <= stopDistance)
             {
                 rb.velocity = new Vector2(0, 0);
-                //Debug.Log("Is not supposed to move");
-            }
-
-            if (noiseLevel >= noiseCauseSuspicionLevel && !enemySeesPlayer)
-            {
-                heardNoiseTimer = 0;
+                Debug.Log("Is not supposed to move");
             }
 
             if (heardNoiseTimer < heardNoiseFollowDuration && !enemySeesPlayer)

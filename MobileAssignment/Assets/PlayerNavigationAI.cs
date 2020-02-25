@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-
+using UnityEngine.UI;
 public class PlayerNavigationAI : MonoBehaviour
 {
     public float rotationSpeed = 3f;

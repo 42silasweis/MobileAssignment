@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class PlayerMovementScript : MonoBehaviour
     public float velocitySpeed;
     public float suspicion;
     float suspicionTimer;
-    public float suspicionCoolDownDelay = 0.6f;
-    Vector2 camerStopped;
+    public float suspicionCoolDownDelay = 0f;
+    Vector2 cameraStopped;
+    public Slider suspicionSlider;
     // Start is called before the first frame update
     void Start()
     {
-        
+        suspicionSlider.maxValue = 1.8f;
+        suspicionSlider.value = suspicion;
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             touchPosition = Camera.main.ScreenToWorldPoint(Input.touches[i].position);
             Debug.DrawLine(transform.position, touchPosition, Color.red);
-            if (Input.GetTouch(0).phase == TouchPhase.Moved && cameraVelocity == camerStopped || Input.GetTouch(0).phase == TouchPhase.Stationary && cameraVelocity == camerStopped)
+            if (Input.GetTouch(0).phase == TouchPhase.Moved && cameraVelocity == cameraStopped || Input.GetTouch(0).phase == TouchPhase.Stationary && cameraVelocity == cameraStopped)
             {
                 currentlyHolding = true;
             }
@@ -39,17 +42,23 @@ public class PlayerMovementScript : MonoBehaviour
             //Debug.Log("Touching screen at: " + touchPosition);
         }
         velocitySpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
-        if (velocitySpeed >= 1.0f && currentlyHolding)
+        if (velocitySpeed >= suspicion && currentlyHolding)
         {
             suspicion = velocitySpeed;
+            if(suspicion > suspicionSlider.value)
+            {
+                suspicionSlider.value = suspicion;
+            }
         }
-        else if(suspicion > 0 && !currentlyHolding && suspicionTimer > suspicionCoolDownDelay)
+        if(suspicion > 0 && suspicionTimer > suspicionCoolDownDelay)// && !currentlyHolding
         {
-            
-            suspicion -= 0.1f;
+            suspicion -= 0.02f;
+            suspicionSlider.value = suspicion;
+
             if (suspicion < 0)
             {
                 suspicion = 0;
+                suspicionSlider.value = suspicion;
             }
             suspicionTimer = 0;
         }

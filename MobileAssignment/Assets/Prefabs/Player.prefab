@@ -141,6 +141,7 @@ MonoBehaviour:
   velocitySpeed: 0
   suspicion: 0
   suspicionCoolDownDelay: 0.5
+  suspicionSlider: {fileID: 0}
 --- !u!114 &4187576632214813315
 MonoBehaviour:
   m_ObjectHideFlags: 0
