@@ -51,7 +51,7 @@ public class PlayerNavigationAI : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
-        GetComponent<Animator>().SetFloat("velocity", GetComponent<Rigidbody2D>().velocity.magnitude);
+        GetComponentInChildren<Animator>().SetFloat("velocity", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
 
     void FixedUpdate()
