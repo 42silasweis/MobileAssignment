@@ -6,7 +6,7 @@ public class EnemyDetectionScript : MonoBehaviour
 {
     public float distance;
     public bool playerIsInSight = false;
-
+    public GameObject prefab;
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
@@ -46,6 +46,7 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
+                    Instantiate(prefab, transform.position, Quaternion.identity);
                 }
             }
         }
