@@ -115,9 +115,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021159947, y: 0}
+  m_Offset: {x: -0.014152646, y: -0.005493045}
   serializedVersion: 2
-  m_Radius: 0.32014048
+  m_Radius: 0.13808386
 --- !u!50 &2866746465683844951
 Rigidbody2D:
   serializedVersion: 4
@@ -216,6 +216,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 50
   playerIsInSight: 0
+  prefab: {fileID: 6292210574387167948, guid: bc27be0e117f9574d8bf6946d6bae73f, type: 3}
+  SoundSource: {fileID: 0}
+  noticedSound: {fileID: 8300000, guid: 403ada67e39c7fe498f2c082d98fe576, type: 3}
 --- !u!1 &2866746466198786184
 GameObject:
   m_ObjectHideFlags: 0

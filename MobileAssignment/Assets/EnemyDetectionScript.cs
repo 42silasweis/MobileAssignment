@@ -7,12 +7,23 @@ public class EnemyDetectionScript : MonoBehaviour
     public float distance;
     public bool playerIsInSight = false;
     public GameObject prefab;
+
+    float spottedSoundTimer = 4f;
+    float spottedSoundDelay = 6f;
+
+    public AudioSource SoundSource;
+    public AudioClip noticedSound;
     private void Start()
     {
         Physics2D.queriesStartInColliders = false;
+        //spottedSoundTimer = GetComponent<BEnemyAI>().spottedSoundTimer;
+        //spottedSoundDelay = GetComponent<BEnemyAI>().spottedSoundDelay;
     }
     void Update()
     {
+        spottedSoundTimer += Time.deltaTime;
+
+
         // Numbering starts from top to bottom meaning top starts at 1
 
         Vector3 noAngle = transform.right; //This and the next two lines is for Raycast 1 offset at an angle of -15 from the transform.right position
@@ -46,7 +57,13 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
-                    Instantiate(prefab, transform.position, Quaternion.identity);
+                    //Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                    if (spottedSoundTimer > spottedSoundDelay)
+                    {
+                        Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                        SoundSource.PlayOneShot(noticedSound); //plays the ! sound
+                        spottedSoundTimer = 0;
+                    }
                 }
             }
         }
@@ -66,6 +83,14 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
+                    //Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                    if (spottedSoundTimer > spottedSoundDelay)
+                    {
+                        Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                        SoundSource.PlayOneShot(noticedSound); //plays the ! sound
+                        spottedSoundTimer = 0;
+                    }
+
                 }
             }
         }
@@ -85,6 +110,13 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
+                    //Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                    if (spottedSoundTimer > spottedSoundDelay)
+                    {
+                        Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                        SoundSource.PlayOneShot(noticedSound); //plays the ! sound
+                        spottedSoundTimer = 0;
+                    }
                 }
             }
         }
@@ -103,6 +135,13 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
+                    //Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                    if (spottedSoundTimer > spottedSoundDelay)
+                    {
+                        Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                        SoundSource.PlayOneShot(noticedSound); //plays the ! sound
+                        spottedSoundTimer = 0;
+                    }
                 }
             }
         }
@@ -121,6 +160,13 @@ public class EnemyDetectionScript : MonoBehaviour
                 if (!playerIsInSight)
                 {
                     playerIsInSight = true;
+                    //Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                    if (spottedSoundTimer > spottedSoundDelay)
+                    {
+                        Instantiate(prefab, transform.position + (Vector3.up * 0.1f), Quaternion.identity);
+                        SoundSource.PlayOneShot(noticedSound); //plays the ! sound
+                        spottedSoundTimer = 0;
+                    }
                 }
             }
         }

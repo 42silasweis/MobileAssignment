@@ -32,7 +32,6 @@ public class BEnemyAI : MonoBehaviour
 
     public bool canPatrol;
 
-    // Start is called before the first frame update
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -58,10 +57,11 @@ public class BEnemyAI : MonoBehaviour
 
     void Update()
     {
+        
         if (enemySeesPlayer && canPatrol || canPatrol && noiseLevel > noiseCauseSuspicionLevel)
         {
             canPatrol = false;
-            target = player;
+            target = player;            
         }
         else if (!canPatrol && heardNoiseTimer > heardNoiseFollowDuration && !enemySeesPlayer)
         {
