@@ -17,6 +17,8 @@ public class PlayerNavigationAI : MonoBehaviour
     Rigidbody2D rb;
     bool currentlyHolding;
 
+    bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,17 @@ public class PlayerNavigationAI : MonoBehaviour
 
     void Update()
     {
+        if (GetComponent<Rigidbody2D>().velocity.magnitude > 0.1f)
+        {
+            isMoving = true;
+        }
+        else if(GetComponent<Rigidbody2D>().velocity.magnitude < 0.1f && GetComponent<Rigidbody2D>().velocity.magnitude > -0.1f)
+        {
+            isMoving = false;
+        }
+        GetComponentInChildren<Animator>().SetBool("isMoving", isMoving);
+
+
         //This function is to make the player sprite face the direction it is moving
         //I believe it requires the sprite to be a Child of the main Player/Object and rotated -90 degrees if the sprite is facing in the UP position
         //This is due to the Vector being a .forward which is necessary as that is the Z rotation axis that makes the sprite "rotate" and not flip like paper mario
@@ -51,7 +64,8 @@ public class PlayerNavigationAI : MonoBehaviour
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), Time.fixedDeltaTime * rotationSpeed);
         }
-        GetComponentInChildren<Animator>().SetFloat("velocity", GetComponent<Rigidbody2D>().velocity.magnitude);
+
+        
     }
 
     void FixedUpdate()
