@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public Queue<string> sentences;
-    float delay = 0.2f;
+    float delay = 0.4f;
     float timer;
     public float delayTillNextSentence = 0.6f;
     float nextTimer;
@@ -33,7 +33,14 @@ public class DialogueManager : MonoBehaviour
             nextTimer = 0;
         } 
     }
-
+    public void NextSentenceWithDelay()
+    {
+        if (nextTimer > delayTillNextSentence)
+        {
+            DisplayNextSentence();
+            nextTimer = 0;
+        }
+    }
     public void StartDialogue(Dialogue dialogue)
     {
         timer = 0;
@@ -51,6 +58,7 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+
         DisplayNextSentence();
     }
     

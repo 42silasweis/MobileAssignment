@@ -11,8 +11,13 @@ public class TutorialTextStuff : MonoBehaviour
 
     void Start()
     {
+        if (dialogue.textFile != null)
+        {
+            dialogue.sentences = (dialogue.textFile.text.Split('\n'));
+        }
         //FindObjectOfType<DialogueManager>().sentences.Clear();
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+
     }
     void Update()
     {
