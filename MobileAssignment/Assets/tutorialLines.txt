@@ -1,0 +1,10 @@
+Welcome to Cloak-And-Dagger!
+Before you begin you'll need to hear us ramble about how to actually play this game.
+Tap and hold anywhere on the screen and your character will move to that location and will even navigate around walls and other obstacles!
+Use the JoyStick on the screen to move the camera. Keep in mind you cannot move your character while doing this.
+Avoid the Enemies and don't let them hear you!
+You'll see a noise level at the top of the screen with a marker labeled LOUD!
+If this bar fills up too high and you are too close to an enemy they will come to investigate...
+Make it to the end of the level without being caught
+If you get cought, you get put in a time-out and will need to find the secret way out to continue making it to the end of the level
+I think that is all you need to know, so get to escaping already!

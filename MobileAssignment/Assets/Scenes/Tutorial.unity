@@ -600,18 +600,23 @@ MonoBehaviour:
   tutorial: 0
   dialogue:
     name: Tutorial
-    textFile: {fileID: 0}
+    textFile: {fileID: 4900000, guid: e56d4adabd59d9e4aa5860d2464ddc4e, type: 3}
     sentences:
-    - Text Field 1
-    - Text Field 2
-    - Text Field 3
-    - Text Field 4
-    - Text Field 5
-    - Text Field 6
-    - Text Field 7
-    - Text Field 8
-    - Text Field 9
-    - Text Field 10
+    - Welcome to Cloak-And-Dagger!
+    - Before you begin you'll need to hear us ramble about how to actually play this
+      game.
+    - Tap and hold anywhere on the screen and your character will move to that location
+      and will even navigate around walls and other obstacles!
+    - Use the JoyStick on the screen to move the camera. Keep in mind you cannot move
+      your character while doing this.
+    - Avoid the Enemies and don't let them hear you!
+    - You'll see a noise level at the top of the screen with a marker labeled LOUD!
+    - If this bar fills up too high and you are too close to an enemy they will come
+      to investigate...
+    - Make it to the end of the level without being caught
+    - If you get cought, you get put in a time-out and will need to find the secret
+      way out to continue making it to the end of the level
+    - I think that is all you need to know, so get to escaping already!
 --- !u!4 &627099273
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +631,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &795201451
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 960
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 540
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984317, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160287000042984323, guid: 1c1be42c1ee2890458a2da1593047af2,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelChanger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c1be42c1ee2890458a2da1593047af2, type: 3}
 --- !u!114 &1547023998 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6766202376400471776, guid: 952ee1612d5d9b141993e427e827034b,

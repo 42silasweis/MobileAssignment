@@ -14,7 +14,8 @@ public class LevelChanger : MonoBehaviour
         {
             FadeToLevel(1);
         }
-        
+        // Line of code put into the script you want it to change levels under whatever conditions: FindObjectOfType<LevelChanger>().FadeToLevel(SceneIndexNumber);
+        // LevelIndex needs to be an int and it needs to correspond with what is given in the build settings for each scene
     }
     public void FadeToLevel(int levelIndex)
     {
