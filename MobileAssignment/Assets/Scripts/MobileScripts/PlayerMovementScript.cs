@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    public int currentLevel = 1;
+
     public float moveSpeed = 5.0f;
     public Vector3 touchPosition;
     public bool currentlyHolding = false;
@@ -66,6 +68,26 @@ public class PlayerMovementScript : MonoBehaviour
         //float y = Input.GetAxis("Vertical");
         //Vector2 moveDir = new Vector2(touchPosition.x - transform.position.x, touchPosition.y - transform.position.y);
         //GetComponent<Rigidbody2D>().velocity = moveDir * moveSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Exit")
+        {
+            switch (currentLevel)
+            {
+                case 1:
+                    FindObjectOfType<LevelChanger>().FadeToLevel(3);
+                    break;
+                case 2:
+                    FindObjectOfType<LevelChanger>().FadeToLevel(4);
+                    break;
+                case 3:
+                    FindObjectOfType<LevelChanger>().FadeToLevel(5);
+                    break;
+
+            }
+        }
     }
 
 }
