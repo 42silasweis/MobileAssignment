@@ -15,10 +15,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void pause()
+    public void Pause()
     {
-        {
-            if(Time.timeScale == 1)
+            if (Time.timeScale == 1)
             {
                 GetComponent<Canvas>().enabled = true;
                 Time.timeScale = 0;
@@ -28,7 +27,6 @@ public class PauseMenu : MonoBehaviour
                 GetComponent<Canvas>().enabled = false;
                 Time.timeScale = 1;
             }
-        }
     }
     public void LoadMainMenu()
     {
