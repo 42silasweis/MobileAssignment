@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerSprite
   - SoundManager
+  - Exit
   layers:
   - Default
   - TransparentFX
