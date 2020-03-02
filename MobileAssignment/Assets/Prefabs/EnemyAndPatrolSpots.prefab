@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stopDistance: 0.35
+  player: {fileID: 0}
+  target: {fileID: 0}
   distToPlayer: 0
   speed: 4
   slowSpeed: 2

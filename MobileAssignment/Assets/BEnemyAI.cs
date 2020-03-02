@@ -7,8 +7,8 @@ public class BEnemyAI : MonoBehaviour
 {
     public float stopDistance = 0.35f;
 
-    Transform player;
-    Transform target;
+    public Transform player;
+    public Transform target;
     public float distToPlayer;
     public float speed = 4f;
     public float slowSpeed = 2f;

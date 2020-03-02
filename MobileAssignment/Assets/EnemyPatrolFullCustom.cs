@@ -51,7 +51,7 @@ public class EnemyPatrolFullCustom : MonoBehaviour
         }
         else
         {
-            randomSelectedLocation = Random.Range(1, patrolLocations.Length);
+            randomSelectedLocation = Random.Range(1, patrolLocations.Length + 1);
         }
         
     }
@@ -141,14 +141,17 @@ public class EnemyPatrolFullCustom : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
+
+        if (target != null)
+        {
+            moveDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+           // Debug.Log("Custom Patrol Targeted");
+        }
+
         Vector3 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * patrolSpeed;// * Time.deltaTime;
         direction.z = transform.position.z;
         //rb.AddForce(force);
-        if (target != null)
-        {
-            moveDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-        }
 
 
         moveDirDist = moveDir.magnitude;

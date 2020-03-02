@@ -127,6 +127,7 @@ public class EnemyPatrolScript : MonoBehaviour
         if(target != null)
         {
             moveDir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
+            //Debug.Log("Patrol script find target");
         }
         
 

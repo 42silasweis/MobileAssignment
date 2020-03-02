@@ -109,7 +109,7 @@ public class EnemyPatrol2Points : MonoBehaviour
             reachedEndOfPath = false;
         }
         Vector3 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed;// * Time.deltaTime;
+        Vector2 force = direction * patrolSpeed;// * Time.deltaTime;
         direction.z = transform.position.z;
         //rb.AddForce(force);
         if (target != null)
@@ -126,9 +126,10 @@ public class EnemyPatrol2Points : MonoBehaviour
             {
                 //rb.velocity = force;
                 rb.AddForce(force);
+                Debug.Log("Should be moving Patrol 2 points");
             }
 
-            if (moveDir.magnitude <= 0.9f && rb.velocity.magnitude <= 0.3f)
+            if (moveDir.magnitude <= 0.9f)// && rb.velocity.magnitude <= 0.3f)
             {
                 if (waitTimer >= randomWaitTime)
                 {
