@@ -142,7 +142,7 @@ public class EnemyPatrolFullCustom : MonoBehaviour
             reachedEndOfPath = false;
         }
         Vector3 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed;// * Time.deltaTime;
+        Vector2 force = direction * patrolSpeed;// * Time.deltaTime;
         direction.z = transform.position.z;
         //rb.AddForce(force);
         if (target != null)
