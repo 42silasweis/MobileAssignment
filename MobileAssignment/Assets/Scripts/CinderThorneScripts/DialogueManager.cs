@@ -8,6 +8,9 @@ public class DialogueManager : MonoBehaviour
     public Text nameText;
     public Text dialogueText;
 
+    public AudioSource SoundSource;
+    public AudioClip buttonSound;
+
     public Animator animator;
 
     public Queue<string> sentences;
@@ -38,6 +41,8 @@ public class DialogueManager : MonoBehaviour
         if (nextTimer > delayTillNextSentence)
         {
             DisplayNextSentence();
+            
+            SoundSource.PlayOneShot(buttonSound, 0.2f); //plays the button sound
             nextTimer = 0;
         }
     }
@@ -86,6 +91,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        FindObjectOfType<LevelChanger>().FadeToLevel(2);
         //Debug.Log("EndDialogue thing");
         //Debug.Log("End of conversation");
     }
