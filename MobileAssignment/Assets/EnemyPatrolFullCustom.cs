@@ -180,7 +180,7 @@ public class EnemyPatrolFullCustom : MonoBehaviour
                     }
                     else
                     {
-                        randomSelectedLocation = Random.Range(1, patrolLocations.Length);
+                        randomSelectedLocation = Random.Range(1, patrolLocations.Length + 1);
                     }
                     
                 }
