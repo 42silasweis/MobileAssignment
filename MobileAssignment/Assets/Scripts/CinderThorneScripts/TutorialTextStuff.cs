@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialTextStuff : MonoBehaviour
 {
-    public bool tutorial = true;
+    //public bool tutorial = true;
 
     public Dialogue dialogue;
 

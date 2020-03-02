@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public Dialogue dialogue;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -23,6 +25,12 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>();
+        if (dialogue.textFile != null)
+        {
+            dialogue.sentences = (dialogue.textFile.text.Split('\n'));
+        }
+        //FindObjectOfType<DialogueManager>().sentences.Clear();
+        StartDialogue(dialogue);
     }
 
     void Update()

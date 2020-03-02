@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Board3.unity
     guid: fa30468aee85aa54ab7d0f3179e8b208
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: d8a2f7e2d040e894188b671f1f9e2e0e
   m_configObjects: {}
