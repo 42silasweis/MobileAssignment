@@ -7,6 +7,7 @@ TagManager:
   - PlayerSprite
   - SoundManager
   - Exit
+  - Enemy
   layers:
   - Default
   - TransparentFX

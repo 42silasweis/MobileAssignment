@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8202877270558964282}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyAndPatrolSpots
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,7 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382718160174631675}
   - component: {fileID: 3382718160174631674}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy1MoveLocation5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382718160697419968}
   - component: {fileID: 3382718160697419971}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy1MoveLocation3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382718160927180228}
   - component: {fileID: 3382718160927180231}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy1MoveLocation1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382718161444941628}
   - component: {fileID: 3382718161444941631}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy1MoveLocation4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3382718161458201067}
   - component: {fileID: 3382718161458201066}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy1MoveLocation2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
